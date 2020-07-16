@@ -15,7 +15,6 @@ public class RobotContainer {
 
     public Command getAutonomousCommand() {
         ShootCommand shoot = new ShootCommand(shooter);
-        shoot.withTimeout(5);
-        return shoot;
+        return shoot.withTimeout(5);
     }
 }
