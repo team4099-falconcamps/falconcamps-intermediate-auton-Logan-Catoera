@@ -21,6 +21,16 @@ public class Drivetrain extends SubsystemBase {
         left.configSelectedFeedbackSensor(FeedbackDevice.IntegratedSensor);
         right.configSelectedFeedbackSensor(FeedbackDevice.IntegratedSensor);
     }
+    public double leftDistance() {
+        return encoderTicksToMeters(left.getSelectedSensorPosition());
+    }
+
+    public double rightDistance() {
+        return encoderTicksToMeters(right.getSelectedSensorPosition());
+    }
+    public double getAngle() {
+        return gyro.getAngle();
+    }
 
     public void setLRPower(double leftPower, double rightPower) {
         left.set(ControlMode.PercentOutput, leftPower);
